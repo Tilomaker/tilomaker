@@ -1,6 +1,1 @@
-   
- 
- 
- 
- 
- 
+Payment disabled
