@@ -17,9 +17,10 @@ export default function TestWithImgs({
 
   const isButtonDisabled = !selectedValue;
 
-  const handleSelect = (key) => {
-    setSelectedValue(key);
-    onFormDataChange(field, key);
+  const handleSelect = (key, variant) => {
+    const selectedVariant = { key, ...variant };
+    setSelectedValue(selectedVariant);
+    onFormDataChange(field, selectedVariant); 
   };
 
   const handleButtonClick = () => {
@@ -29,7 +30,7 @@ export default function TestWithImgs({
       console.log("Next step initiated");
       console.log(`Введене значення для ${field}: `, selectedValue);
       onNext();
-      setSelectedValue("");
+      setSelectedValue(""); 
     }
   };
 
@@ -48,7 +49,7 @@ export default function TestWithImgs({
         <ul className="flex flex-col gap-3 mt-8 mb-8">
           {variants.map((variantObj, index) => {
             const [key, variant] = Object.entries(variantObj)[0];
-            const isSelected = selectedValue === key;
+            const isSelected = selectedValue?.key === key;
 
             return (
               <motion.li
@@ -58,7 +59,7 @@ export default function TestWithImgs({
                     ? "border-2 border-customGreen bg-[#E6F8E0]"
                     : "border border-customGreen bg-white hover:bg-gray-100"
                 }`}
-                onClick={() => handleSelect(key)}
+                onClick={() => handleSelect(key, variant)}
                 custom={index}
                 variants={variantsAnimation}
                 initial="hidden"

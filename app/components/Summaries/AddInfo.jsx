@@ -21,12 +21,14 @@ export default function AddInfo({ formData }) {
             <span className="text-customGreen">Вік:</span> {formData.age}
           </p>
         </div>
-        <div className="absolute right-0 top-0 w-auto h-full">
+        <div className="absolute right-[0px] top-0 w-auto h-full">
           <Image
-            src={img}
+            src={formData.testDesiredBody.img}
             alt="athletic body"
             sizes="100vh"
             className="w-auto h-full"
+            width={100}
+            height={100}
           />
         </div>
       </div>

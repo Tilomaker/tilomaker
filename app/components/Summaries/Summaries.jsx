@@ -11,6 +11,7 @@ export default function Summaries({
   button = "Вперед",
   onNext,
 }) {
+  console.log("🚀 ~ formData:", formData);
   return (
     <>
       <div className="h-[90%] ">
