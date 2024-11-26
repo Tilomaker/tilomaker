@@ -76,7 +76,7 @@ export default function Form({
       console.log("Перейдемо на наступний крок з даними:", fields);
       onNext();
       setFields({ email: "", phone: "" });
-      window.location.href = "https://izft9.weblium.site/tilomakeronline";
+      window.location.href = "https://tilomaker.com/tilomakeronline";
     }
   };
 
