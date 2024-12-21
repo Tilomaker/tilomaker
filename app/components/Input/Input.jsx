@@ -224,7 +224,7 @@ export default function InputComponent({
 
         <Button
           fullWidth
-          className={`fixed max-w-[80.6%] bottom-6 left-1/2 transform -translate-x-1/2 h-[50px] text-white text-[15px] font-semibold ${buttonClass}`}
+          className={`fixed max-w-[80.6%] sm:max-w-[600px] bottom-6 left-1/2 transform -translate-x-1/2 h-[50px] text-white text-[15px] font-semibold ${buttonClass}`}
           onPress={handleButtonClick}
           disabled={isBtnDisabled}
         >

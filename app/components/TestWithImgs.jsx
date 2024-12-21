@@ -20,7 +20,7 @@ export default function TestWithImgs({
   const handleSelect = (key, variant) => {
     const selectedVariant = { key, ...variant };
     setSelectedValue(selectedVariant);
-    onFormDataChange(field, selectedVariant); 
+    onFormDataChange(field, selectedVariant);
   };
 
   const handleButtonClick = () => {
@@ -30,7 +30,7 @@ export default function TestWithImgs({
       console.log("Next step initiated");
       console.log(`Введене значення для ${field}: `, selectedValue);
       onNext();
-      setSelectedValue(""); 
+      setSelectedValue("");
     }
   };
 
@@ -83,7 +83,7 @@ export default function TestWithImgs({
       <div>
         <Button
           fullWidth
-          className={`fixed max-w-[80.6%] bottom-6 left-1/2 transform -translate-x-1/2 h-[50px] text-white text-[15px] font-semibold ${
+          className={`fixed max-w-[80.6%] sm:max-w-[600px] bottom-6 left-1/2 transform -translate-x-1/2 h-[50px] text-white text-[15px] font-semibold ${
             isButtonDisabled
               ? "bg-[#C3C3C3] cursor-not-allowed"
               : "bg-customGreen"

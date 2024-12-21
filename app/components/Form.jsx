@@ -166,7 +166,7 @@ export default function Form({
         <Button
           fullWidth
           type="submit"
-          className={`fixed max-w-[80.6%] bottom-6 left-1/2 transform -translate-x-1/2 h-[50px] text-white text-[15px] font-semibold ${
+          className={`fixed max-w-[80.6%] sm:max-w-[600px] bottom-6 left-1/2 transform -translate-x-1/2 h-[50px] text-white text-[15px] font-semibold ${
             !fields.email || !fields.phone || errors.email || errors.phone
               ? "bg-[#C3C3C3] cursor-not-allowed"
               : "bg-customGreen"

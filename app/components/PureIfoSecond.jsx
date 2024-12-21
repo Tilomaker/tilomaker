@@ -57,7 +57,7 @@ export default function PureInfoSecond({
       <div>
         <Button
           fullWidth
-          className="fixed max-w-[80.6%] bottom-6 left-1/2 transform -translate-x-1/2 h-[50px] bg-customGreen text-white text-[15px] font-semibold"
+          className="fixed max-w-[80.6%] sm:max-w-[600px] bottom-6 left-1/2 transform -translate-x-1/2 h-[50px] bg-customGreen text-white text-[15px] font-semibold"
           onPress={onNext}
         >
           {button}
