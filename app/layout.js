@@ -16,7 +16,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="uk" className={`${montserrat.className}`}>
       <head>
-        {/* Meta Pixel Script */}
         <Script
           id="facebook-pixel"
           strategy="afterInteractive"
