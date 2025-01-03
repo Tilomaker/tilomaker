@@ -75,9 +75,6 @@ export default function PureInfo({
         </motion.div>
       )}
       <div>
-        <h1 className="text-2xl text-red-600">
-          DEVELOPMENT VERSION NOT IN USE
-        </h1>
         <motion.p
           className="mx-auto text-base mb-16 leading-5"
           dangerouslySetInnerHTML={{ __html: info }}
@@ -88,8 +85,7 @@ export default function PureInfo({
       </div>
       <Button
         fullWidth
-        // className="fixed max-w-[80.6%] sm:max-w-[600px]  bottom-6 left-1/2 transform -translate-x-1/2 h-[50px] bg-customGreen text-white text-[15px] font-semibold"
-        className=" max-w-[80.6%] sm:max-w-[600px]   h-[50px] bg-customGreen text-white text-[15px] font-semibold"
+        className="fixed max-w-[80.6%] sm:max-w-[600px] bottom-6 left-1/2 transform -translate-x-1/2 h-[50px] bg-customGreen text-white text-[15px] font-semibold"
         onPress={onNext}
       >
         {button}
