@@ -16,9 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="uk" className={`${montserrat.className}`}>
       <head>
-        <Script
-          id="facebook-pixel"
-          strategy="afterInteractive"
+        <script
           dangerouslySetInnerHTML={{
             __html: `
               !function(f,b,e,v,n,t,s)
