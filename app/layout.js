@@ -32,8 +32,6 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
-      </head>
-      <body className="bg-customLightYellow overflow-x-hidden">
         <noscript>
           <img
             height="1"
@@ -42,8 +40,8 @@ export default function RootLayout({ children }) {
             src="https://www.facebook.com/tr?id=292102645600496&ev=PageView&noscript=1"
           />
         </noscript>
-        {children}
-      </body>
+      </head>
+      <body className="bg-customLightYellow overflow-x-hidden">{children}</body>
     </html>
   );
 }
