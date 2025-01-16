@@ -6,6 +6,7 @@ import {
   subtitleAnimation,
   imageAnimation,
 } from "../helpers/animation";
+import Link from "next/link";
 
 export default function PureInfo({
   bigTitle,
@@ -15,13 +16,8 @@ export default function PureInfo({
   info,
   button = "Вперед",
   onNext,
+  link,
 }) {
-  const handleButtonClick = () => {
-    if (onNext) {
-      onNext();
-    }
-  };
-
   return (
     <>
       <div>
@@ -89,13 +85,25 @@ export default function PureInfo({
           animate="visible"
         />
       </div>
-      <Button
-        fullWidth
-        className="fixed max-w-[80.6%] sm:max-w-[600px] bottom-6 left-1/2 transform -translate-x-1/2 h-[50px] bg-customGreen text-white text-[15px] font-semibold"
-        onPress={handleButtonClick}
-      >
-        {button}
-      </Button>
+      {link ? (
+        <Link href="/tilomaker">
+          <Button
+            fullWidth
+            className="fixed max-w-[80.6%] bottom-6 left-1/2 transform -translate-x-1/2 h-[50px] bg-customGreen text-white text-[15px] font-semibold"
+            onPress={onNext}
+          >
+            {button}
+          </Button>
+        </Link>
+      ) : (
+        <Button
+          fullWidth
+          className="fixed max-w-[80.6%] bottom-6 left-1/2 transform -translate-x-1/2 h-[50px] bg-customGreen text-white text-[15px] font-semibold"
+          onPress={onNext}
+        >
+          {button}
+        </Button>
+      )}
     </>
   );
 }
