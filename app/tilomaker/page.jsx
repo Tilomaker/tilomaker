@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import data from "../plot/plot.json";
 import PureInfo from "../components/PureInfo";
 import InputComponent from "../components/Input/Input";
@@ -44,17 +44,53 @@ export default function Tilomaker() {
   const screenData = data[currentScreen];
   const ComponentToRender = componentMap[screenData.type] || PureInfo;
 
+  function trackScreen() {
+    const data = {
+      currentScreen,
+      title: screenData.title,
+    };
+    console.log('Screen changed:', data);
+    try {
+      fbq('track', 'ScreenChanged', data);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  function trackForm() {
+    const data = formData;
+    console.log('Form changed:', data);
+    try {
+      fbq('track', 'FormChanged', data);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  useEffect(() => {
+    trackScreen(currentScreen);
+  }, [currentScreen]);
+
+  // useEffect(() => {
+  //   trackForm(formData);
+  // }, [formData]);
+
   const handleNext = () => {
     if (currentScreen < data.length - 1) {
-      setCurrentScreen(currentScreen + 1);
+      const nextScreen = currentScreen + 1;
+      setCurrentScreen(nextScreen);
+      // trackScreen(nextScreen);
     }
   };
 
   const handlePrev = () => {
     if (currentScreen > 0) {
-      setCurrentScreen(currentScreen - 1);
+      const prevScreen = currentScreen - 1;
+      setCurrentScreen(prevScreen);
+      // trackScreen(prevScreen);
     }
   };
+
 
   const handleFormDataChange = (field, value) => {
     setFormData((prevData) => ({
