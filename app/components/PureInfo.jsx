@@ -17,7 +17,20 @@ export default function PureInfo({
   button = "Вперед",
   onNext,
   link,
+  lead,
 }) {
+  const handleLead = () => {
+    if (typeof window !== "undefined" && window.fbq) {
+      window.fbq("track", "Lead");
+    }
+  };
+
+  const handleStartTrial = () => {
+    if (typeof window !== "undefined" && window.fbq) {
+      window.fbq("track", "StartTrial");
+    }
+  };
+
   return (
     <>
       <div>
@@ -90,7 +103,10 @@ export default function PureInfo({
           <Button
             fullWidth
             className="fixed max-w-[80.6%] bottom-6 left-1/2 transform -translate-x-1/2 h-[50px] bg-customGreen text-white text-[15px] font-semibold"
-            onPress={onNext}
+            onPress={() => {
+              if (link) handleStartTrial();
+              onNext?.();
+            }}
           >
             {button}
           </Button>
@@ -99,7 +115,10 @@ export default function PureInfo({
         <Button
           fullWidth
           className="fixed max-w-[80.6%] bottom-6 left-1/2 transform -translate-x-1/2 h-[50px] bg-customGreen text-white text-[15px] font-semibold"
-          onPress={onNext}
+          onPress={() => {
+            if (lead) handleLead();
+            onNext?.();
+          }}
         >
           {button}
         </Button>

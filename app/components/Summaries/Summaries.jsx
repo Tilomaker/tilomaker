@@ -4,6 +4,7 @@ import { titleAnimation, variantsAnimation } from "../../helpers/animation";
 import BMIStatus from "./BIMStatus";
 import AddInfo from "./AddInfo";
 import SummMessages from "./SummMessages";
+import Link from "next/link";
 
 export default function Summaries({
   title,
@@ -55,13 +56,15 @@ export default function Summaries({
       </div>
 
       <div>
-        <Button
-          fullWidth
-          className="h-[50px] bg-customGreen text-white text-[15px] font-semibold"
-          onPress={onNext}
-        >
-          {button}
-        </Button>
+        <Link href={"/personal-plan"}>
+          <Button
+            fullWidth
+            className="h-[50px] bg-customGreen text-white text-[15px] font-semibold"
+            // onPress={onNext}
+          >
+            {button}
+          </Button>
+        </Link>
       </div>
     </>
   );

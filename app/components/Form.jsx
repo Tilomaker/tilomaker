@@ -68,11 +68,11 @@ export default function Form({
     ) {
       alert("Будь ласка, виправте помилки перед продовженням.");
     } else {
-      await sendMessage(
-        ` Email: ${formData.email || "Не вказано"}, Телефон: ${
-          formData.phone || "Не вказано"
-        }`
-      );
+      // await sendMessage(
+      //   ` Email: ${formData.email || "Не вказано"}, Телефон: ${
+      //     formData.phone || "Не вказано"
+      //   }`
+      // );
       console.log("Перейдемо на наступний крок з даними:", fields);
       onNext();
       setFields({ email: "", phone: "" });

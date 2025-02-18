@@ -37,7 +37,7 @@ export default function Tilomaker() {
     TestRatingScale: TestRatingScale,
     UploadInfo: UploadInfo,
     Summaries: Summaries,
-    Form: Form,
+    // Form: Form,
     // Payment: Payment,
   };
 
@@ -49,9 +49,9 @@ export default function Tilomaker() {
       currentScreen,
       title: screenData.title,
     };
-    console.log('Screen changed:', data);
+    console.log("Screen changed:", data);
     try {
-      fbq('track', 'ScreenChanged', data);
+      fbq("track", "ScreenChanged", data);
     } catch (e) {
       console.log(e);
     }
@@ -59,9 +59,9 @@ export default function Tilomaker() {
 
   function trackForm() {
     const data = formData;
-    console.log('Form changed:', data);
+    console.log("Form changed:", data);
     try {
-      fbq('track', 'FormChanged', data);
+      fbq("track", "FormChanged", data);
     } catch (e) {
       console.log(e);
     }
@@ -91,7 +91,6 @@ export default function Tilomaker() {
     }
   };
 
-
   const handleFormDataChange = (field, value) => {
     setFormData((prevData) => ({
       ...prevData,
@@ -120,12 +119,12 @@ export default function Tilomaker() {
       ) : (
         <p>Компонент не найден</p>
       )}
-      {/* <Debugger
+      <Debugger
         currentScreen={currentScreen}
         formData={formData}
         onNext={handleNext}
         onPrev={handlePrev}
-      /> */}
+      />
     </main>
   );
 }

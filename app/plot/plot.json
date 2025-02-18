@@ -19,7 +19,8 @@
       "className": "min-h-60 min-w-60 object-contain mx-auto my-10"
     },
     "info": "Схуднення зі мною це не важко. <b>TILOMAKER</b> - це весела пригода на шляху <b>до фігури твоєї мрії!</b>",
-    "button": "Вперед"
+    "button": "Вперед",
+    "lead": true
   },
   {
     "type": "Input",
