@@ -8,7 +8,7 @@
       "className": " mx-auto"
     },
     "info": "Цей план допоможе тобі схуднути швидше та без шкоди для здоров’я. <b>Готова до змін?</b>",
-     "link":true,
+    "link": true,
     "button": "Давай почнемо!"
   },
   {
@@ -19,8 +19,7 @@
       "className": "min-h-60 min-w-60 object-contain mx-auto my-10"
     },
     "info": "Схуднення зі мною це не важко. <b>TILOMAKER</b> - це весела пригода на шляху <b>до фігури твоєї мрії!</b>",
-    "button": "Вперед",
-    "lead": true
+    "button": "Вперед"
   },
   {
     "type": "Input",

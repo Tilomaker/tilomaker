@@ -46,6 +46,10 @@ export default function Form() {
 
   const handleButtonClick = async (e) => {
     e.preventDefault();
+    if (typeof window !== "undefined" && window.fbq) {
+      window.fbq("track", "Lead");
+    }
+
     const newErrors = {};
     for (const [key, value] of Object.entries(fields)) {
       newErrors[key] = validateField(key, value);

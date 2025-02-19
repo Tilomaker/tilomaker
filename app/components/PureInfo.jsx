@@ -6,7 +6,7 @@ import {
   subtitleAnimation,
   imageAnimation,
 } from "../helpers/animation";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function PureInfo({
   bigTitle,
@@ -17,18 +17,21 @@ export default function PureInfo({
   button = "Вперед",
   onNext,
   link,
-  lead,
 }) {
-  const handleLead = () => {
-    if (typeof window !== "undefined" && window.fbq) {
-      window.fbq("track", "Lead");
-    }
-  };
+  const router = useRouter();
 
   const handleStartTrial = () => {
     if (typeof window !== "undefined" && window.fbq) {
       window.fbq("track", "StartTrial");
     }
+  };
+
+  const handleClick = () => {
+    console.log("StartTrial triggered");
+    handleStartTrial();
+    setTimeout(() => {
+      router.push("/tilomaker");
+    }, 200);
   };
 
   return (
@@ -99,26 +102,18 @@ export default function PureInfo({
         />
       </div>
       {link ? (
-        <Link href="/tilomaker">
-          <Button
-            fullWidth
-            className="fixed max-w-[80.6%] bottom-6 left-1/2 transform -translate-x-1/2 h-[50px] bg-customGreen text-white text-[15px] font-semibold"
-            onPress={() => {
-              if (link) handleStartTrial();
-              onNext?.();
-            }}
-          >
-            {button}
-          </Button>
-        </Link>
+        <Button
+          onPress={handleClick}
+          fullWidth
+          className="fixed max-w-[80.6%] bottom-6 left-1/2 transform -translate-x-1/2 h-[50px] bg-customGreen text-white text-[15px] font-semibold"
+        >
+          {button}
+        </Button>
       ) : (
         <Button
           fullWidth
           className="fixed max-w-[80.6%] bottom-6 left-1/2 transform -translate-x-1/2 h-[50px] bg-customGreen text-white text-[15px] font-semibold"
-          onPress={() => {
-            if (lead) handleLead();
-            onNext?.();
-          }}
+          onPress={onNext}
         >
           {button}
         </Button>

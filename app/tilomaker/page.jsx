@@ -50,22 +50,22 @@ export default function Tilomaker() {
       title: screenData.title,
     };
     console.log("Screen changed:", data);
-    try {
-      fbq("track", "ScreenChanged", data);
-    } catch (e) {
-      console.log(e);
-    }
+    // try {
+    //   fbq("track", "ScreenChanged", data);
+    // } catch (e) {
+    //   console.log(e);
+    // }
   }
 
-  function trackForm() {
-    const data = formData;
-    console.log("Form changed:", data);
-    try {
-      fbq("track", "FormChanged", data);
-    } catch (e) {
-      console.log(e);
-    }
-  }
+  // function trackForm() {
+  //   const data = formData;
+  //   console.log("Form changed:", data);
+  //   try {
+  //     fbq("track", "FormChanged", data);
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // }
 
   useEffect(() => {
     trackScreen(currentScreen);
